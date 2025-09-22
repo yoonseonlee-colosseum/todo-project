@@ -1,3 +1,7 @@
+plugins {
+	kotlin("plugin.jpa")
+}
+
 description = "skeleton-domain"
 
 allOpen {
