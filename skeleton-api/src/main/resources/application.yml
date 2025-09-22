@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: skeleton-api
+  profiles:
+    active: ${SPRING_PROFILE:local}
+  config:
+    import:
+      - 'classpath:core-persistence.yml'
