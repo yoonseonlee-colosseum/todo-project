@@ -3,12 +3,12 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	kotlin("jvm")
-	kotlin("kapt") version "1.9.10"
+	kotlin("kapt")
 	kotlin("plugin.spring") apply false
-	kotlin("plugin.jpa") version "1.9.10" apply false
+	kotlin("plugin.jpa") apply false
 	id("org.springframework.boot") apply false
 	id("io.spring.dependency-management") apply false
-	id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
+	id("org.jlleitschuh.gradle.ktlint")
 }
 
 java {
@@ -24,6 +24,13 @@ allprojects {
 
 	repositories {
 		mavenCentral()
+		maven {
+			url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
+			credentials {
+				username = project.findProperty("gpr.user") as String
+				password = project.findProperty("gpr.key") as String
+			}
+		}
 	}
 }
 

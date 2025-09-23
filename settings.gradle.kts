@@ -3,6 +3,7 @@ rootProject.name = "skeleton"
 include(
 	"skeleton-api",
 	"skeleton-domain",
+	"skeleton-infra",
 )
 
 pluginManagement {
@@ -17,7 +18,9 @@ pluginManagement {
 		eachPlugin {
 			when (requested.id.id) {
 				"org.jetbrains.kotlin.jvm" -> useVersion(kotlinVersion)
+				"org.jetbrains.kotlin.kapt" -> useVersion(kotlinVersion)
 				"org.jetbrains.kotlin.plugin.spring" -> useVersion(kotlinVersion)
+				"org.jetbrains.kotlin.plugin.jpa" -> useVersion(kotlinVersion)
 				"org.springframework.boot" -> useVersion(springBootVersion)
 				"io.spring.dependency-management" -> useVersion(springDependencyManagementVersion)
 				"org.jlleitschuh.gradle.ktlint" -> useVersion(ktlintVersion)

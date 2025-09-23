@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 description = "skeleton-api"
 
 dependencies {
@@ -8,7 +10,7 @@ dependencies {
 	testImplementation("com.h2database:h2")
 }
 
-tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+tasks.withType<BootJar> {
 	enabled = true
 	mainClass.set("kr.skeleton.api.ApplicationKt")
 }

@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
 	kotlin("plugin.jpa")
 }
@@ -13,6 +15,8 @@ allOpen {
 val queryDslVersion: String by project.extra
 
 dependencies {
+	api(project(":skeleton-infra"))
+
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("com.querydsl:querydsl-jpa:$queryDslVersion")
 
@@ -20,10 +24,9 @@ dependencies {
 	kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
-tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
-	enabled = false
-}
-
 tasks.withType<Jar> {
 	enabled = true
+}
+tasks.withType<BootJar> {
+	enabled = false
 }

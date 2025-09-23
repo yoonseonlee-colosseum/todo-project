@@ -6,6 +6,3 @@ spring:
     name: skeleton-api
   profiles:
     active: ${SPRING_PROFILE:local}
-  config:
-    import:
-      - 'classpath:core-persistence.yml'
