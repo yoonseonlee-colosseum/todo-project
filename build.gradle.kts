@@ -41,6 +41,7 @@ subprojects {
 	apply(plugin = "io.spring.dependency-management")
 
 	val p6spyVersion: String by project.extra
+
 	dependencies {
 		implementation("org.jetbrains.kotlin:kotlin-reflect")
 		implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -55,9 +56,5 @@ subprojects {
 			freeCompilerArgs.set(listOf("-Xjsr305=strict"))
 			jvmTarget.set(JvmTarget.JVM_21)
 		}
-	}
-
-	tasks.withType<Test> {
-		useJUnitPlatform()
 	}
 }

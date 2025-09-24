@@ -10,6 +10,10 @@ dependencies {
 	testImplementation("com.h2database:h2")
 }
 
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
+
 tasks.withType<BootJar> {
 	enabled = true
 	mainClass.set("kr.skeleton.api.ApplicationKt")

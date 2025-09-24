@@ -7,9 +7,14 @@ dependencies {
 	api(libs.skeleton.library.excel)
 }
 
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
+
 tasks.withType<Jar> {
 	enabled = true
 }
+
 tasks.withType<BootJar> {
 	enabled = false
 }

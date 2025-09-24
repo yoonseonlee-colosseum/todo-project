@@ -24,9 +24,14 @@ dependencies {
 	kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
+tasks.withType<Test> {
+	useJUnitPlatform()
+}
+
 tasks.withType<Jar> {
 	enabled = true
 }
+
 tasks.withType<BootJar> {
 	enabled = false
 }
