@@ -8,7 +8,6 @@ plugins {
 	kotlin("plugin.jpa") apply false
 	id("org.springframework.boot") apply false
 	id("io.spring.dependency-management") apply false
-	id("org.jlleitschuh.gradle.ktlint")
 }
 
 java {
@@ -40,7 +39,6 @@ subprojects {
 	apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 	apply(plugin = "org.springframework.boot")
 	apply(plugin = "io.spring.dependency-management")
-	apply(plugin = "org.jlleitschuh.gradle.ktlint")
 
 	val p6spyVersion: String by project.extra
 	dependencies {
