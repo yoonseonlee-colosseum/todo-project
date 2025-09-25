@@ -1,4 +1,4 @@
 [libraries]
 poi-ooxml = { group = "org.apache.poi", name = "poi-ooxml", version = "5.4.1" }
-skeleton-library-excel = { group = "kr.skeleton", name = "skeleton-library-excel", version = "0.0.6" }
+colosseum-excel = {group = "com.colosseum", name = "excel", version = "0.0.1"}
 

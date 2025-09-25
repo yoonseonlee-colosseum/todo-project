@@ -32,8 +32,8 @@ pluginManagement {
         maven {
             url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs")
             credentials {
-                username = ""
-                password = ""
+                username = providers.gradleProperty("gpr.user").get()
+                password = providers.gradleProperty("gpr.key").get()
             }
         }
     }

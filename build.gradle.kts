@@ -8,7 +8,7 @@ plugins {
     kotlin("plugin.jpa") apply false
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management") apply false
-    id("com.colosseum.code-quality") version "1.0.7"
+    id("com.colosseum.code-quality") version "1.0.9"
     id("com.diffplug.spotless") version "6.25.0" apply false // 버전만 명시
 }
 
