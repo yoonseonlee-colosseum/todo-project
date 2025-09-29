@@ -8,31 +8,12 @@ plugins {
     kotlin("plugin.jpa") apply false
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management") apply false
-    id("com.colosseum.code-quality") version "1.0.9"
+    id("com.colosseum.code-quality") version "2.0.2"
     id("com.diffplug.spotless") version "6.25.0" apply false // 버전만 명시
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
-}
-
-val projectGroup: String by project
-val applicationVersion: String by project
-
-allprojects {
-    group = projectGroup
-    version = applicationVersion
-
-    repositories {
-        mavenCentral()
-        maven {
-            url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
-            credentials {
-                username = project.findProperty("gpr.user") as String
-                password = project.findProperty("gpr.key") as String
-            }
-        }
-    }
 }
 
 subprojects {
@@ -57,6 +38,12 @@ subprojects {
         compilerOptions {
             freeCompilerArgs.set(listOf("-Xjsr305=strict"))
             jvmTarget.set(JvmTarget.JVM_21)
+        }
+    }
+
+    plugins.withId("com.diffplug.spotless") {
+        spotless {
+            ratchetFrom("HEAD")
         }
     }
 }

@@ -49,8 +49,8 @@ private class TestExcelData(
 
     @ExcelMergedColumn(headerName = "상품명")
     @ExcelColumn(headerName = "상품명(영문)", width = 8000)
-    private val goodsNameEng: String = "상품명(영문) 내용",
 
+    private val goodsNameEng: String = "상품명(영문) 내용",
     @ExcelColumn(headerName = "상품코드", width = 12000)
     private val goodsCode: String = "상품코드 내용",
 )

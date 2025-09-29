@@ -4,7 +4,8 @@ description = "skeleton-infra"
 
 dependencies {
 	api(libs.poi.ooxml)
-	api(libs.colosseum.excel)
+	api(libs.colo.excel)
+	api(libs.colo.util)
 }
 
 tasks.withType<Test> {

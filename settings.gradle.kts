@@ -30,7 +30,20 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         maven {
-            url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs")
+            url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs-backend")
+            credentials {
+                username = providers.gradleProperty("gpr.user").get()
+                password = providers.gradleProperty("gpr.key").get()
+            }
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven {
+            url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs-backend")
             credentials {
                 username = providers.gradleProperty("gpr.user").get()
                 password = providers.gradleProperty("gpr.key").get()
