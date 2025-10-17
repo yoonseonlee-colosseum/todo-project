@@ -5,9 +5,9 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class BoardJpaRepository :
-	QuerydslRepositorySupport(Board::class.java),
-	BoardRepository {
-	override fun save(board: Board) {
-		entityManager!!.persist(board)
-	}
+    QuerydslRepositorySupport(Board::class.java),
+    BoardRepository {
+    override fun save(board: Board) {
+        entityManager!!.persist(board)
+    }
 }

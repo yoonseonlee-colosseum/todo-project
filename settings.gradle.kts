@@ -32,8 +32,8 @@ pluginManagement {
         maven {
             url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs-backend")
             credentials {
-                username = providers.gradleProperty("gpr.user").get()
-                password = providers.gradleProperty("gpr.key").get()
+                username = providers.gradleProperty("gpr.user.yoonseon").get()
+                password = providers.gradleProperty("gpr.token.yoonseon").get()
             }
         }
     }
@@ -45,8 +45,8 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/colosseum-libs-backend")
             credentials {
-                username = providers.gradleProperty("gpr.user").get()
-                password = providers.gradleProperty("gpr.key").get()
+                username = providers.gradleProperty("gpr.user.yoonseon").get()
+                password = providers.gradleProperty("gpr.token.yoonseon").get()
             }
         }
     }

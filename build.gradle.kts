@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     kotlin("jvm")
     kotlin("kapt")
@@ -8,12 +5,19 @@ plugins {
     kotlin("plugin.jpa") apply false
     id("org.springframework.boot") apply false
     id("io.spring.dependency-management") apply false
-    id("com.colosseum.code-quality") version "2.0.2"
+    id("com.colosseum.code-quality") version "2.1.1"
     id("com.diffplug.spotless") version "6.25.0" apply false // 버전만 명시
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
+}
+
+kotlin {
+    compilerOptions {
+        jvmToolchain(21)
+        freeCompilerArgs.addAll("-Xjsr305=strict")
+    }
 }
 
 subprojects {
@@ -32,13 +36,6 @@ subprojects {
 
         testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
-    }
-
-    tasks.withType<KotlinCompile> {
-        compilerOptions {
-            freeCompilerArgs.set(listOf("-Xjsr305=strict"))
-            jvmTarget.set(JvmTarget.JVM_21)
-        }
     }
 
     plugins.withId("com.diffplug.spotless") {

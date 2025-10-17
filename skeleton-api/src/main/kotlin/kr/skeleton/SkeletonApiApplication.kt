@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SkeletonApiApplication
 
 fun main(args: Array<String>) {
-	runApplication<SkeletonApiApplication>(*args)
+    runApplication<SkeletonApiApplication>(*args)
 }

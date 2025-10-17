@@ -1,37 +1,37 @@
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-	kotlin("plugin.jpa")
+    kotlin("plugin.jpa")
 }
 
 description = "skeleton-domain"
 
 allOpen {
-	annotation("jakarta.persistence.Entity")
-	annotation("jakarta.persistence.MappedSuperclass")
-	annotation("jakarta.persistence.Embeddable")
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperclass")
+    annotation("jakarta.persistence.Embeddable")
 }
 
 val queryDslVersion: String by project.extra
 
 dependencies {
-	api(project(":skeleton-infra"))
+    api(project(":skeleton-infra"))
 
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("com.querydsl:querydsl-jpa:$queryDslVersion")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("com.querydsl:querydsl-jpa:$queryDslVersion")
 
-	kapt("com.querydsl:querydsl-apt:$queryDslVersion")
-	kapt("org.springframework.boot:spring-boot-configuration-processor")
+    kapt("com.querydsl:querydsl-apt:$queryDslVersion")
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<Test> {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 tasks.withType<Jar> {
-	enabled = true
+    enabled = true
 }
 
 tasks.withType<BootJar> {
-	enabled = false
+    enabled = false
 }

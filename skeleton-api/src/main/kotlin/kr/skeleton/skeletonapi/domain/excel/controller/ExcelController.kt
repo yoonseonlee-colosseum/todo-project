@@ -18,14 +18,20 @@ import com.colosseum.excel.annotation.ExcelMergedColumn
 class ExcelController {
     @GetMapping("/api/test/excel/download")
     fun excelDown(response: HttpServletResponse) {
-        val dataList = listOf(TestExcelData(), TestExcelData(), TestExcelData(), TestExcelData(), TestExcelData())
+        val dataList = listOf(
+            TestExcelData(),
+            TestExcelData(),
+            TestExcelData(),
+            TestExcelData(),
+            TestExcelData(),
+        )
 
         val toResult = ColoExcelGenerator(
             dataList,
             TestExcelData::class.java,
         ).toResult()
 
-        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response.contentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         response.setHeader(
             HttpHeaders.CONTENT_DISPOSITION,
             String.format(
@@ -49,7 +55,6 @@ private class TestExcelData(
 
     @ExcelMergedColumn(headerName = "상품명")
     @ExcelColumn(headerName = "상품명(영문)", width = 8000)
-
     private val goodsNameEng: String = "상품명(영문) 내용",
     @ExcelColumn(headerName = "상품코드", width = 12000)
     private val goodsCode: String = "상품코드 내용",
