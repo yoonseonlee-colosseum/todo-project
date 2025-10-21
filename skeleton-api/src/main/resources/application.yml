@@ -6,3 +6,7 @@ spring:
     name: skeleton-api
   profiles:
     active: ${SPRING_PROFILE:local}
+
+colo:
+  jackson:
+    enabled: true  # 또는 false로 비활성화 가능

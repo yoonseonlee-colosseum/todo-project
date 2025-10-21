@@ -5,6 +5,7 @@ description = "skeleton-api"
 dependencies {
     implementation(project(":skeleton-domain"))
     implementation("org.springframework.boot:spring-boot-starter-web")
+    api(libs.colo.autoconfigure)
 
     runtimeOnly("com.h2database:h2")
     testImplementation("com.h2database:h2")
