@@ -1,18 +1,16 @@
 package kr.skeleton.skeletonapi.domain.excel.controller
 
+import com.practice.colocontext.excel.ColoExcelGenerator
+import com.practice.colocontext.excel.annotation.ExcelBodyStyle
+import com.practice.colocontext.excel.annotation.ExcelColumn
+import com.practice.colocontext.excel.annotation.ExcelFileName
+import com.practice.colocontext.excel.annotation.ExcelHeaderStyle
+import com.practice.colocontext.excel.annotation.ExcelMergedColumn
 import jakarta.servlet.http.HttpServletResponse
-
 import org.apache.poi.ss.usermodel.HorizontalAlignment
 import org.springframework.http.HttpHeaders
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-
-import com.colosseum.excel.ColoExcelGenerator
-import com.colosseum.excel.annotation.ExcelBodyStyle
-import com.colosseum.excel.annotation.ExcelColumn
-import com.colosseum.excel.annotation.ExcelFileName
-import com.colosseum.excel.annotation.ExcelHeaderStyle
-import com.colosseum.excel.annotation.ExcelMergedColumn
 
 @RestController
 class ExcelController {

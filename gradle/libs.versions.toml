@@ -1,6 +1,5 @@
 [libraries]
 poi-ooxml = {group = "org.apache.poi", name = "poi-ooxml", version = "5.4.1"}
 colo-excel = {group = "com.colosseum", name = "excel", version = "0.0.1"}
-colo-util = {group = "com.colosseum", name = "colo-util", version = "0.0.2"}
-colo-autoconfigure = {group = "com.colosseum", name = "colo-autoconfigure", version = "0.0.2"}
+colo-starter = {group = "com.colosseum", name = "colo-starter", version = "0.0.1"}
 
